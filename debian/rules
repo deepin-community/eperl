@@ -1,0 +1,53 @@
+#!/usr/bin/make -f
+
+TMP = debian/eperl
+ULP = $(shell perl -V::vendorarch: | sed -e 's/ $$//')
+USP = $(shell perl -V::vendorlib:  | sed -e 's/ $$//')
+
+export DEB_BUILD_MAINT_OPTIONS=hardening=+bindnow
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	cp -p eperl.1 eperl.1.build-backup
+	dh_auto_configure
+
+override_dh_auto_build:
+	#  Remove unneeded library flags
+	perl -pi -e 's/ -l\S*db\S*//g' Makefile config.status config_sc.h
+	dh_auto_build
+	dh_auto_test
+
+	mv Makefile Makefile.stand-alone
+	dh_auto_configure --buildsystem=perl_makemaker
+	dh_auto_build -- LD_RUN_PATH=
+	sed -e "s/LDFLAGS = /LDFLAGS = `dpkg-buildflags --get LDFLAGS` /" -i mod/Parse/Makefile
+	sed -e "s/CCCDLFLAGS = /CCCDLFLAGS = `dpkg-buildflags --get CPPFLAGS` /" -i mod/Parse/Makefile
+	dh_auto_build -- LD_RUN_PATH=
+	dh_auto_test
+
+override_dh_auto_test:
+
+override_dh_auto_clean:
+	dh_auto_clean
+	test ! -f Makefile.stand       || $(MAKE) -f Makefile.stand       distclean
+	test ! -f Makefile.stand-alone || $(MAKE) -f Makefile.stand-alone distclean
+	rm -f Makefile.stand*
+	test ! -e eperl.1 -a -e eperl.1.build-backup && mv eperl.1.build-backup eperl.1 || true
+
+override_dh_autoreconf_clean:
+	tar cf backup.tar config_ac.h.in configure
+	dh_autoreconf_clean
+	tar xf backup.tar
+	rm -f backup.tar
+
+override_dh_auto_install:
+	# Install eperl binary (no idea why DESTDIR= or PREFIX= don't work here)
+	dh_auto_install -- -f Makefile.stand-alone prefix=$(TMP)/usr
+	# ... and perl modules
+	dh_auto_install
+	# ... and move Apache/ePerl.pm
+	mv $(TMP)$(ULP)/Apache $(TMP)$(USP)
+	find $(TMP) -type d -empty | xargs -r rmdir -p --ignore-fail-on-non-empty
+	rm -rf $(TMP)/usr/lib/eperl

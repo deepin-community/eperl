@@ -1,0 +1,36 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: ePerl
+Source: http://www.ossp.org/pkg/tool/eperl/
+
+Files: *
+Copyright: 1996-1999 Ralf S. Engelschall <rse@engelschall.com>
+License: GPL-2 or Artistic
+
+Files: debian/*
+Copyright: 1997-1998 Heiko Schlittermann <hs@schlittermann.de>
+           1997-2000 Anthony Fok <foka@debian.org>
+           2001-2005 Denis Barbier <barbier@debian.org>
+           2006-2008 Luk Claes <luk@debian.org>
+           2008      Stephen Gran <sgran@debian.org>
+           2008      Marc 'HE' Brockschmidt <he@debian.org>
+           2010-2018 Axel Beckert <abe@debian.org>
+License: GPL-2 or Artistic
+Comment: It is assumed that, without explicit statement, the packaging
+ is licensed under the same terms as the upstream code.
+
+License: GPL-2
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License version 2 as
+ published by the Free Software Foundation.
+ .
+ This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ General Public License for more details.
+ .
+ On Debian GNU/Linux systems, the complete text of the GNU General
+ Public License may be found in `/usr/share/common-licenses/GPL-2'.
+
+License: Artistic
+ On Debian GNU/Linux systems, the complete text of the
+ Artistic Licence can be found in `/usr/share/common-licenses/Artistic'.

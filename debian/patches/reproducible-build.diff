@@ -1,0 +1,15 @@
+Description: Remove inclusion of build time and user from version output
+ This hopefully makes the build reproducible.
+Author: Axel Beckert <abe@debian.org>
+
+--- a/eperl_perl5.c
++++ b/eperl_perl5.c
+@@ -52,8 +52,6 @@
+     fprintf(stdout, "  Perl Library    : %s/CORE/libperl.a\n", AC_perl_archlib);
+     fprintf(stdout, "  Perl DynaLoader : %s\n", AC_perl_dla);
+     fprintf(stdout, "  System Libs     : %s\n", AC_perl_libs);
+-    fprintf(stdout, "  Built User      : %s\n", AC_build_user);
+-    fprintf(stdout, "  Built Time      : %s\n", AC_build_time_iso);
+     fprintf(stdout, "\n");
+ }
+ 

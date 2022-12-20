@@ -1,0 +1,38 @@
+        ____           _ 
+    ___|  _ \ ___ _ __| |
+   / _ \ |_) / _ \ '__| |
+  |  __/  __/  __/ |  | |
+   \___|_|   \___|_|  |_|
+                         
+  ePerl -- Embedded Perl 5 Language
+  
+  CREDITS
+  =======
+
+  Credit has to be given to the following people who contributed ideas,
+  stuff, bugfixes, hints etc. (in alphabetical order):
+
+  o Steve Dodd            <dirk@loth.demon.co.uk>
+  o J. Douglas Dunlop     <dunlop@ionline.net>
+  o Anthony Fok           <foka@gpu.srv.ualberta.ca> 
+  o Eric Howe             <mu@trends.net>
+  o Michael Lazar         <michael@vertex.worldweb.com>
+  o Joerg Lenneis         <lenneis@wu-wien.ac.at>
+  o Doug MacEachern       <dougm@opengroup.org>
+  o Ewan McPhail          <ewan@epages.iafrica.com>
+  o Joseph W. Norton      <norton@alum.mit.edu>
+  o Mike Pheasant         <pheasant@gte.net>
+  o Andrew Pimlott        <pimlott@abel.math.harvard.edu>
+  o Tiago Luz Pinto       <tiago@EPS.UFSC.BR>
+  o Jim O'Quinn           <oquinn@fsonline.com>
+  o Christian Reiber      <chrei@en.muc.de>
+  o Phil Ritzenthaler     <phil@cgrg.ohio-state.edu>
+  o Heiko Schlittermann   <heiko@os.inf.tu-dresden.de>
+  o Marc Singer           <elf@netcom.com>
+  o Jarom Smith           <jarom@jarom-indy.prophet.com>
+  o Sone Takeshi          <ts1@tsn.or.jp>
+  o Karl Wallner          <karl.wallner@x3network.net>
+  o Ian Wojtowicz         <i@woj.com>
+
+  ...and all other ePerl users who gave me feedback but I've forgot...
+

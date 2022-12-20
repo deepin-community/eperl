@@ -1,0 +1,25 @@
+Source: eperl
+Section: devel
+Priority: optional
+Maintainer: Axel Beckert <abe@debian.org>
+Build-Depends: debhelper (>= 11~),
+               libperl-dev,
+               perl (>= 5.8.1),
+               shtool
+Standards-Version: 4.1.4
+Homepage: http://www.ossp.org/pkg/tool/eperl/
+Vcs-Browser: https://salsa.debian.org/debian/eperl
+Vcs-Git: https://salsa.debian.org/debian/eperl.git
+
+Package: eperl
+Architecture: any
+Depends: ${misc:Depends},
+         ${perl:Depends},
+         ${shlibs:Depends}
+Suggests: libapache2-mod-perl2
+Description: Embedded Perl 5 Language
+ ePerl interprets an ASCII file bristled with Perl 5 program statements by
+ evaluating the Perl 5 code while passing through the plain ASCII data. It
+ can operate in various ways: As a stand-alone Unix filter or integrated
+ Perl 5 module for general file generation tasks and as a powerful Webserver
+ scripting language for dynamic HTML page programming.

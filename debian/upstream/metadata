@@ -1,0 +1,8 @@
+%YAML 1.1
+---
+# https://wiki.debian.org/UpstreamMetadata
+Changelog: http://cvs.ossp.org/pkg/tool/eperl/ChangeLog
+Contact:  Ralf S. Engelschall <rse@engelschall.com>
+Name: Embedded Perl Language
+Homepage: http://www.ossp.org/pkg/tool/eperl/
+Repository-Browse: http://cvs.ossp.org/dir?d=ossp-pkg/eperl
